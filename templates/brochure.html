@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% block title %}Brochure | FURORE 2026{% endblock %}
+
+{% block content %}
+<section class="section card">
+    <p class="eyebrow">Official Document</p>
+    <h1>FURORE 2026 Brochure</h1>
+    <p>
+        View or download the latest event brochure.
+    </p>
+    <div class="hero-actions">
+        <a
+            class="btn btn-gold"
+            href="{{ url_for('static', filename='docs/furore brochere.pdf') }}"
+            target="_blank"
+            rel="noopener noreferrer"
+        >
+            Open Brochure
+        </a>
+        <a
+            class="btn btn-outline"
+            href="{{ url_for('static', filename='docs/furore brochere.pdf') }}"
+            download
+        >
+            Download PDF
+        </a>
+    </div>
+</section>
+{% endblock %}

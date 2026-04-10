@@ -1,0 +1,135 @@
+{% extends "base.html" %}
+<!-- FURORE 2026 - Dayananda Sagar College of Engineering Cultural Fest -->
+<!-- Website developed by Arya Sharan (aryasharan@example.com) -->
+<!-- Backend development, frontend design, and deployment integration -->
+{% block title %}Home | FURORE 2026{% endblock %}
+
+{% block content %}
+<section class="hero section home-hero">
+    <p class="eyebrow">Dayananda Sagar College of Engineering presents</p>
+    <p class="hero-brand">FURORE</p>
+    <p class="royal-kicker">✦ ♛ ✦ The Grand Cultural Fest ✦ ♛ ✦</p>
+    <h1>Whispers of Royalty</h1>
+    <p class="hero-copy">
+        Enter the empire of expression where music, intellect, and valor converge.
+        FURORE 2026 summons every house to rise and claim the crown.
+    </p>
+    <p class="hero-subcopy">Three days. Four royal clusters. One campus-wide coronation.</p>
+    <div class="hero-actions">
+        <a class="btn btn-gold" href="{{ url_for('events') }}">Explore Events</a>
+        <a class="btn btn-gold" href="{{ url_for('guidelines') }}">Contingent</a>
+        <a class="btn btn-gold" href="{{ url_for('brochure') }}">Brochure</a>
+    </div>
+</section>
+
+<section class="section royal-marquee">
+    ⚜ Epic · Medieval · Cultural Celebration ⚜
+</section>
+
+<section class="section date-strip">
+    <div><strong>23 April</strong> | Day I</div>
+    <div><strong>24 April</strong> | Day II</div>
+    <div><strong>25 April</strong> | Day III</div>
+</section>
+
+<section class="section card about-kingdom">
+    <h2>About the Kingdom</h2>
+    <p>
+        Dayananda Sagar College of Engineering hosts FURORE as a grand cultural
+        saga where 15,000+ voices gather in one arena. From orchestral battles
+        to strategic duels, each moment echoes legacy, creativity, and ambition.
+    </p>
+    <div class="cluster-mini-grid">
+        {% for cluster in clusters.values() %}
+        <a href="{{ url_for('about') }}#{{ cluster.id }}" class="mini-card">
+            <p class="icon">{{ cluster.icon }}</p>
+            <h3>{{ cluster.name }}</h3>
+            <p>{{ cluster.event_count }} Events</p>
+        </a>
+        {% endfor %}
+    </div>
+</section>
+
+<section class="section card dsce-spotlight grand-frame">
+    <div class="dsce-logo-wrap">
+        <img src="{{ url_for('static', filename='images/dscelogo.png') }}" alt="DSCE Logo">
+    </div>
+    <div>
+        <p class="eyebrow">Dayananda Sagar College of Engineering</p>
+        <h2>DSCE Since 1979</h2>
+        <p>
+            Established in 1979 and located in the heart of Bengaluru, DSCE is a premier engineering institution affiliated with Visvesvaraya Technological University (VTU), known for academic excellence, innovation, and a vibrant campus culture.
+        </p>
+        <p class="location">
+            <strong>Bengaluru, Karnataka, India</strong>
+        </p>
+        <div class="stats-grid">
+            <article><h3>45+</h3><p>Years of Legacy</p></article>
+            <article><h3>10K+</h3><p>Students</p></article>
+            <article><h3>40+</h3><p>Event Battles</p></article>
+            <article><h3>4</h3><p>Royal Clusters</p></article>
+        </div>
+    </div>
+</section>
+
+<section class="section card grand-frame">
+    <p class="eyebrow">About FURORE</p>
+    <h2>Whispers of Royalty</h2>
+    <p>
+        FURORE is the annual cultural extravaganza of Dayananda Sagar College of Engineering, Bengaluru — one of the most anticipated college fests in Karnataka. Every year, thousands of students from across the country converge to compete, perform, and celebrate.
+    </p>
+    <p>
+        This year's theme — "Whispers of Royalty" — transforms the campus into a grand medieval kingdom where every stage is a throne, every competition a battle for glory, and every participant a legend in the making.
+    </p>
+    <p>
+        From the thunderous crack of Battle of Bands to the razor-edged wordplay of Litsoc, from the grace of classical dance to the heat of a futsal final — FURORE 2026 is three days of unrelenting excellence.
+    </p>
+</section>
+
+<section class="section card grand-frame">
+    <p class="eyebrow">Theme 2026</p>
+    <h2>Royal Clusters</h2>
+    <div class="motif-grid">
+        {% for cluster in clusters.values() %}
+        <article>{{ cluster.icon }} {{ cluster.name }}</article>
+        {% endfor %}
+    </div>
+</section>
+
+<section class="section card grand-frame">
+    <p class="eyebrow">Chronicles of Glory</p>
+    <h2>Event Gallery</h2>
+    <div class="gallery-grid">
+        <figure>
+            <img src="{{ url_for('static', filename='images/live.png') }}" alt="Live performance" loading="lazy">
+        </figure>
+        <figure>
+            <img src="{{ url_for('static', filename='images/new_dance.jpg') }}" alt="Dance event" loading="lazy">
+        </figure>
+        <figure>
+            <img src="{{ url_for('static', filename='images/bands.png') }}" alt="Battle of bands" loading="lazy">
+        </figure>
+        <figure>
+            <img src="{{ url_for('static', filename='images/fashion.png') }}" alt="Fashion event" loading="lazy">
+        </figure>
+        <figure>
+            <img src="{{ url_for('static', filename='images/new_drama.jpg') }}" alt="Drama and street play" loading="lazy">
+        </figure>
+        <figure>
+            <img src="{{ url_for('static', filename='images/camera.png') }}" alt="Photography event" loading="lazy">
+        </figure>
+        <figure>
+            <img src="{{ url_for('static', filename='images/emcee_bg.jpg') }}" alt="Emcee event" loading="lazy">
+        </figure>
+        <figure>
+            <img src="{{ url_for('static', filename='images/induction_event.jpg') }}" alt="Induction ceremony" loading="lazy">
+        </figure>
+        <figure>
+            <img src="{{ url_for('static', filename='images/dance_perf.jpg') }}" alt="Vibrant event" loading="lazy">
+        </figure>
+        <figure>
+            <img src="{{ url_for('static', filename='images/drama.png') }}" alt="Final event" loading="lazy">
+        </figure>
+    </div>
+</section>
+{% endblock %}

@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block title %}Events | FURORE 2026{% endblock %}
+
+{% block content %}
+<section class="section">
+    <p class="eyebrow">Choose Your Domain</p>
+    <h1>Royal Clusters</h1>
+    <div class="cluster-grid">
+        {% for cluster in clusters.values() %}
+        <a href="{{ url_for('about') }}#{{ cluster.id }}" class="cluster-card">
+            <div class="cluster-top">
+                <span class="cluster-icon">{{ cluster.icon }}</span>
+                <span class="badge">{{ cluster.weightage }} Weightage</span>
+            </div>
+            <h2>{{ cluster.name }}</h2>
+            <p>{{ cluster.description }}</p>
+            <div class="cluster-meta">
+                <span>{{ cluster.event_count }} Events</span>
+                <span>Max {{ cluster.max_points }} pts</span>
+            </div>
+        </a>
+        {% endfor %}
+    </div>
+</section>
+{% endblock %}

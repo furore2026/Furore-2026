@@ -1,0 +1,27 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.egg-info/
+.venv/
+venv/
+
+# Large files (handle separately)
+# *.pdf - commented out to allow compressed brochure
+static/images/new_vib_event.jpg
+static/images/vib_bg.jpg
+static/images/krb_event.jpg
+static/images/new_event.jpg
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Temporary files
+*.tmp
+*.temp

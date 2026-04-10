@@ -1,0 +1,67 @@
+{% extends "base.html" %}
+{% block title %}About | FURORE 2026{% endblock %}
+
+{% block content %}
+<section class="section card">
+    <h1>The Legacy</h1>
+    <p>
+        Established in 1979, DSCE has stood as a stronghold of innovation and student excellence.
+        FURORE evolved into its cultural crown-jewel, welcoming over 15,000 participants and spectators
+        across editions. Whispers of Royalty celebrates that lineage with artistry, strategy, and sport.
+    </p>
+</section>
+
+<section class="section card">
+    <h2>Scoring Legend</h2>
+    <div class="legend-grid">
+        {% for stars, points in scoring_legend.items() %}
+        <article class="legend-item">
+            <h3>{{ "★" * stars }}</h3>
+            <p>{{ points }} pts</p>
+        </article>
+        {% endfor %}
+    </div>
+</section>
+
+{% for cluster in clusters.values() %}
+<section class="section card cluster-detail" id="{{ cluster.id }}">
+    <h2>{{ cluster.icon }} {{ cluster.name }}</h2>
+    <p>{{ cluster.description }}</p>
+    <div class="table-wrap">
+        <table class="royal-table">
+            <thead>
+                <tr>
+                    <th>Event Name</th>
+                    <th>Star Rating</th>
+                    <th>1st Place Points</th>
+                    <th>2nd Place Points</th>
+                    <th>Register</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for event in cluster.events %}
+                <tr>
+                    <td>
+                        <strong>{{ event.name }}</strong>
+                        <p class="event-desc">{{ event.description }}</p>
+                        <p class="event-meta"><strong>Fee:</strong> {{ event.registration_fee }}</p>
+                        <p class="event-meta"><strong>Prize:</strong> {{ event.prize_pool }}</p>
+                        <p class="event-meta"><strong>Contacts:</strong> {{ event.contacts }}</p>
+                        <p class="event-meta"><strong>Key Rule:</strong> {{ event.rules }}</p>
+                    </td>
+                    <td>{{ event.stars_emoji }}</td>
+                    <td>{{ event.first_points }}</td>
+                    <td>{{ event.second_points }}</td>
+                    <td>
+                        <a href="{{ event.register_link }}" class="btn btn-outline register-btn">
+                            Register
+                        </a>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</section>
+{% endfor %}
+{% endblock %}
