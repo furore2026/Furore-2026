@@ -24,7 +24,7 @@ FURORE is the annual cultural extravaganza of Dayananda Sagar College of Enginee
 - **Icons:** Unicode emoji for universal compatibility
 
 ## Development Credits
-Website developed by Arya Sharan (aryasharan@example.com)
+Website developed by Arya Sharan (aryasharan47@gmail.com), git - aryakuna14
 Backend development, frontend design, and deployment integration
 
 ## Deployment
